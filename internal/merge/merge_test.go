@@ -32,6 +32,13 @@ func TestMergeCollection(t *testing.T) {
 			collection3: []int{8, 9, 10},
 			expected:    []int{1, 2, 3, 4, 8, 9, 10},
 		},
+		{
+			name:        "Should merge all collection and return ascending slices",
+			collection1: []int{7, 6, 5},
+			collection2: []int{1, 2, 3, 4},
+			collection3: []int{8, 9, 10},
+			expected:    []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+		},
 	}
 
 	for _, tc := range table {
