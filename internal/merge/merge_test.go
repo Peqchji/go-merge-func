@@ -46,12 +46,19 @@ func TestMergeCollection(t *testing.T) {
 			collection3: []int{},
 			expected:    []int{1, 2, 3, 4},
 		},
-				{
+		{
 			name:        "Should merge collection collectly when negative interger in 1st collection",
 			collection1: []int{-1, -2, -3, -4},
 			collection2: []int{1, 2, 3, 4},
 			collection3: []int{0},
 			expected:    []int{-4, -3, -2, -1, 0, 1, 2, 3, 4},
+		},
+		{
+			name:        "Should merge in between",
+			collection1: []int{99, 66, 4, -99},
+			collection2: []int{1, 2, 3, 10},
+			collection3: []int{22, 77, 88},
+			expected:    []int{-99, 1, 2, 3, 4, 10, 22, 66, 77, 88, 99},
 		},
 	}
 
