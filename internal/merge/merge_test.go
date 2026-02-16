@@ -39,6 +39,20 @@ func TestMergeCollection(t *testing.T) {
 			collection3: []int{8, 9, 10},
 			expected:    []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
 		},
+		{
+			name:        "Should reordered the 1st collection",
+			collection1: []int{4, 3, 2, 1},
+			collection2: []int{},
+			collection3: []int{},
+			expected:    []int{1, 2, 3, 4},
+		},
+				{
+			name:        "Should merge collection collectly when negative interger in 1st collection",
+			collection1: []int{-1, -2, -3, -4},
+			collection2: []int{1, 2, 3, 4},
+			collection3: []int{0},
+			expected:    []int{-4, -3, -2, -1, 0, 1, 2, 3, 4},
+		},
 	}
 
 	for _, tc := range table {
