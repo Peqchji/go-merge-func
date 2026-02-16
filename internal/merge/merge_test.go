@@ -60,6 +60,13 @@ func TestMergeCollection(t *testing.T) {
 			collection3: []int{22, 77, 88},
 			expected:    []int{-99, 1, 2, 3, 4, 10, 22, 66, 77, 88, 99},
 		},
+		{
+			name: "Should merge same int coll",
+			collection1: []int{7, 7, 7},
+			collection2: []int{7, 7},
+			collection3: []int{7},
+			expected:    []int{7, 7, 7, 7, 7, 7},
+		},
 	}
 
 	for _, tc := range table {
